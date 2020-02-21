@@ -38,4 +38,12 @@ case closed
     }
     
 }
+
+}
+
+
+enum StarCheked:Int {
+case On = 1
+case Off
+    
 }

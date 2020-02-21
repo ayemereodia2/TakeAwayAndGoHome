@@ -50,15 +50,15 @@ class ShowViewCell: UITableViewCell {
 
     
     @IBAction func selectFav(_ sender: Any) {
-        if favouriteToggleState == 1 {
-                    favouriteToggleState = 2
+        if favouriteToggleState == StarCheked.On.rawValue {
+                    favouriteToggleState = StarCheked.Off.rawValue
             self.favouriteBtn.setImage(restViewModel.filledImg,for:.normal)
-            setFavourite(toggle: 1)
+            setFavourite(toggle: StarCheked.On.rawValue)
         }
         else {
-            favouriteToggleState = 1
+            favouriteToggleState = StarCheked.On.rawValue
             self.favouriteBtn.setImage(restViewModel.emptyImg,for:.normal)
-            setFavourite(toggle: 2)
+            setFavourite(toggle: StarCheked.Off.rawValue)
     }
 }
     
