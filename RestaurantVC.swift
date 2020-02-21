@@ -154,6 +154,8 @@ extension RestaurantVC :favouriteDelegate,RestaurantVMDelegate, UISearchBarDeleg
             tableView.reloadData()
         }
         else{
+            //MARK :- refresh Favourites
+            
             viewModel.getFavourites()
             favourites = viewModel.listOffavourites
 
