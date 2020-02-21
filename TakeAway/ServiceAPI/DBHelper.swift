@@ -13,7 +13,7 @@ class DBHelper {
     
     // MARK: - Singleton
     static let shared = DBHelper()
-    private let db: Connection?
+    private  let db: Connection?
     
     
     // MARK: - DB Table
