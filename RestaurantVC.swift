@@ -154,6 +154,9 @@ extension RestaurantVC :favouriteDelegate,RestaurantVMDelegate, UISearchBarDeleg
             tableView.reloadData()
         }
         else{
+            viewModel.getFavourites()
+            favourites = viewModel.listOffavourites
+
             restaurants = restaurants.filter({( rest : Payload) -> Bool in
                 return rest.name.lowercased().contains(searchText.lowercased())
                 
