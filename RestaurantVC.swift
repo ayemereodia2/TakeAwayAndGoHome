@@ -15,7 +15,8 @@ class RestaurantVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var showActionSheet: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    
+    var headingMenu:UIAlertController!
+
     // MARK: - Properties
            var viewModel:RestaurantVM!
            public var restaurants = [Payload]()
@@ -62,7 +63,11 @@ class RestaurantVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     func setUpStyleSheet(){
         // 1
-        let headingMenu = UIAlertController(title: nil, message: "Sort By", preferredStyle: .actionSheet)
+         headingMenu = UIAlertController(title: nil, message: "Sort By", preferredStyle: .actionSheet)
+        headingMenu.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            action in
+                 // Called when user taps outside
+        }))
                       
         let bestAction = UIAlertAction(title: "Best Match", style: .default, handler:{_ in self.sortBy(option: .bestMatch)})
     
@@ -89,6 +94,8 @@ class RestaurantVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
                   self.present(headingMenu, animated: true, completion: nil)
     }
 
+    
+    
 }
 
 extension RestaurantVC :favouriteDelegate,RestaurantVMDelegate, UISearchBarDelegate{

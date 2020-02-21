@@ -44,41 +44,6 @@ final class RestaurantVM:RestaurantListViewModel {
         //restaurantDelegate?.didGet(favourites)
     }
     
-//    func sortBy(option: SortBy,tableView: UITableView){
-//
-//        switch (option) {
-//        case .minCost:
-//            restaurants = restaurants.sorted{$0.sortingValues.minCost > $1.sortingValues.minCost }
-//            tableView.reloadData()
-//                break;
-//        case .averageProductPrice:
-//            restaurants = restaurants.sorted{$0.sortingValues.averageProductPrice > $1.sortingValues.averageProductPrice }
-//                       tableView.reloadData()
-//            break;
-//        case .bestMatch:
-//            restaurants = restaurants.sorted{$0.sortingValues.bestMatch > $1.sortingValues.bestMatch }
-//                tableView.reloadData()
-//                break;
-//        case .distance:
-//            restaurants = restaurants.sorted{$0.sortingValues.distance > $1.sortingValues.distance }
-//                tableView.reloadData()
-//            break;
-//        case .newest:
-//                restaurants = restaurants.sorted{$0.sortingValues.newest > $1.sortingValues.newest }
-//                    tableView.reloadData()
-//                    break;
-//        case .popularity:
-//            restaurants = restaurants.sorted{$0.sortingValues.popularity > $1.sortingValues.popularity }
-//            tableView.reloadData()
-//            break;
-//        case .deliveryCosts:
-//                   restaurants = restaurants.sorted{$0.sortingValues.deliveryCosts > $1.sortingValues.deliveryCosts }
-//                   tableView.reloadData()
-//                   break;
-//
-//        default:
-//            break;
-//        }
-//    }
+
     
 }
