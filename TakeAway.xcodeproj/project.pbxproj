@@ -3,17 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040CDA0F23FF00CB00DD51A2 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040CDA0E23FF00CB00DD51A2 /* DBHelper.swift */; };
+		040CDA1323FF136600DD51A2 /* SortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040CDA1223FF136600DD51A2 /* SortBy.swift */; };
+		040CDA1623FFF9EA00DD51A2 /* ModifyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040CDA1523FFF9EA00DD51A2 /* ModifyCellViewModel.swift */; };
+		040CDA1A2400510A00DD51A2 /* TestRestaurantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040CDA192400510A00DD51A2 /* TestRestaurantList.swift */; };
 		04912CD023FED05F0038E0F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912CCF23FED05F0038E0F2 /* AppDelegate.swift */; };
-		04912CD223FED05F0038E0F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912CD123FED05F0038E0F2 /* SceneDelegate.swift */; };
 		04912CD423FED05F0038E0F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912CD323FED05F0038E0F2 /* ViewController.swift */; };
 		04912CD723FED05F0038E0F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04912CD523FED05F0038E0F2 /* Main.storyboard */; };
 		04912CD923FED0600038E0F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04912CD823FED0600038E0F2 /* Assets.xcassets */; };
 		04912CDC23FED0600038E0F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04912CDA23FED0600038E0F2 /* LaunchScreen.storyboard */; };
 		04912CE723FED0600038E0F2 /* TakeAwayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912CE623FED0600038E0F2 /* TakeAwayTests.swift */; };
+		04912CF223FED1340038E0F2 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 04912CF123FED1340038E0F2 /* sample.json */; };
+		04912CF623FED2E50038E0F2 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912CF523FED2E50038E0F2 /* Payload.swift */; };
+		04912CF923FED4B20038E0F2 /* RestaurantListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912CF823FED4B20038E0F2 /* RestaurantListViewModel.swift */; };
+		04912CFC23FED55A0038E0F2 /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912CFB23FED55A0038E0F2 /* ServiceAPI.swift */; };
+		04912CFE23FED68A0038E0F2 /* RestaurantVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912CFD23FED68A0038E0F2 /* RestaurantVM.swift */; };
+		04912D0423FEE9640038E0F2 /* RestaurantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912D0323FEE9640038E0F2 /* RestaurantVC.swift */; };
+		04912D0723FEEB620038E0F2 /* ShowViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912D0523FEEB620038E0F2 /* ShowViewCell.swift */; };
+		04912D0823FEEB620038E0F2 /* ShowViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04912D0623FEEB620038E0F2 /* ShowViewCell.xib */; };
+		04912D0B23FEF6640038E0F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912D0A23FEF6640038E0F2 /* Constants.swift */; };
+		A4D797340FFB7D84A9905DCE /* Pods_TakeAwayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803FD80FE85199B2C053FA32 /* Pods_TakeAwayTests.framework */; };
+		D1B86FC802C9456F9231B339 /* Pods_TakeAway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D524863F62EE3D2C5B0A2E4 /* Pods_TakeAway.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,9 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040CDA0E23FF00CB00DD51A2 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		040CDA1223FF136600DD51A2 /* SortBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortBy.swift; sourceTree = "<group>"; };
+		040CDA1523FFF9EA00DD51A2 /* ModifyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyCellViewModel.swift; sourceTree = "<group>"; };
+		040CDA192400510A00DD51A2 /* TestRestaurantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRestaurantList.swift; sourceTree = "<group>"; };
 		04912CCC23FED05F0038E0F2 /* TakeAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04912CCF23FED05F0038E0F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04912CD123FED05F0038E0F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		04912CD323FED05F0038E0F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04912CD623FED05F0038E0F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04912CD823FED0600038E0F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +55,21 @@
 		04912CE223FED0600038E0F2 /* TakeAwayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeAwayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04912CE623FED0600038E0F2 /* TakeAwayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAwayTests.swift; sourceTree = "<group>"; };
 		04912CE823FED0600038E0F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04912CF123FED1340038E0F2 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
+		04912CF523FED2E50038E0F2 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		04912CF823FED4B20038E0F2 /* RestaurantListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModel.swift; sourceTree = "<group>"; };
+		04912CFB23FED55A0038E0F2 /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
+		04912CFD23FED68A0038E0F2 /* RestaurantVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantVM.swift; sourceTree = "<group>"; };
+		04912D0323FEE9640038E0F2 /* RestaurantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantVC.swift; sourceTree = "<group>"; };
+		04912D0523FEEB620038E0F2 /* ShowViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewCell.swift; sourceTree = "<group>"; };
+		04912D0623FEEB620038E0F2 /* ShowViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowViewCell.xib; sourceTree = "<group>"; };
+		04912D0A23FEF6640038E0F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3D524863F62EE3D2C5B0A2E4 /* Pods_TakeAway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeAway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		803FD80FE85199B2C053FA32 /* Pods_TakeAwayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeAwayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADE959543CE315D08EC1073C /* Pods-TakeAway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeAway.debug.xcconfig"; path = "Target Support Files/Pods-TakeAway/Pods-TakeAway.debug.xcconfig"; sourceTree = "<group>"; };
+		CB9895F34F0939B84FB2F74D /* Pods-TakeAwayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeAwayTests.release.xcconfig"; path = "Target Support Files/Pods-TakeAwayTests/Pods-TakeAwayTests.release.xcconfig"; sourceTree = "<group>"; };
+		CD50F87242F1C0058E8A54AE /* Pods-TakeAwayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeAwayTests.debug.xcconfig"; path = "Target Support Files/Pods-TakeAwayTests/Pods-TakeAwayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F96ABFEA9F11B48D962A502C /* Pods-TakeAway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeAway.release.xcconfig"; path = "Target Support Files/Pods-TakeAway/Pods-TakeAway.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B86FC802C9456F9231B339 /* Pods_TakeAway.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D797340FFB7D84A9905DCE /* Pods_TakeAwayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,9 +95,13 @@
 		04912CC323FED05F0038E0F2 = {
 			isa = PBXGroup;
 			children = (
+				04912D0323FEE9640038E0F2 /* RestaurantVC.swift */,
+				04912CF123FED1340038E0F2 /* sample.json */,
 				04912CCE23FED05F0038E0F2 /* TakeAway */,
 				04912CE523FED0600038E0F2 /* TakeAwayTests */,
 				04912CCD23FED05F0038E0F2 /* Products */,
+				08DF996AF29AAF6CA30442BE /* Pods */,
+				AF4A96A8C0B67C891FF6A806 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,12 +117,17 @@
 		04912CCE23FED05F0038E0F2 /* TakeAway */ = {
 			isa = PBXGroup;
 			children = (
+				04912D0923FEF64D0038E0F2 /* Util */,
+				04912CFF23FEDABF0038E0F2 /* View */,
+				04912CFA23FED5300038E0F2 /* ServiceAPI */,
+				04912CF723FED4950038E0F2 /* Protocol */,
+				04912CF423FED2810038E0F2 /* Model */,
+				04912CF323FED2740038E0F2 /* ViewModel */,
 				04912CCF23FED05F0038E0F2 /* AppDelegate.swift */,
-				04912CD123FED05F0038E0F2 /* SceneDelegate.swift */,
-				04912CD323FED05F0038E0F2 /* ViewController.swift */,
 				04912CD523FED05F0038E0F2 /* Main.storyboard */,
 				04912CD823FED0600038E0F2 /* Assets.xcassets */,
 				04912CDA23FED0600038E0F2 /* LaunchScreen.storyboard */,
+				04912CD323FED05F0038E0F2 /* ViewController.swift */,
 				04912CDD23FED0600038E0F2 /* Info.plist */,
 			);
 			path = TakeAway;
@@ -95,8 +138,89 @@
 			children = (
 				04912CE623FED0600038E0F2 /* TakeAwayTests.swift */,
 				04912CE823FED0600038E0F2 /* Info.plist */,
+				040CDA192400510A00DD51A2 /* TestRestaurantList.swift */,
 			);
 			path = TakeAwayTests;
+			sourceTree = "<group>";
+		};
+		04912CF323FED2740038E0F2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04912CFD23FED68A0038E0F2 /* RestaurantVM.swift */,
+				040CDA1523FFF9EA00DD51A2 /* ModifyCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04912CF423FED2810038E0F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04912CF523FED2E50038E0F2 /* Payload.swift */,
+				040CDA1223FF136600DD51A2 /* SortBy.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04912CF723FED4950038E0F2 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				04912CF823FED4B20038E0F2 /* RestaurantListViewModel.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		04912CFA23FED5300038E0F2 /* ServiceAPI */ = {
+			isa = PBXGroup;
+			children = (
+				04912CFB23FED55A0038E0F2 /* ServiceAPI.swift */,
+				040CDA0E23FF00CB00DD51A2 /* DBHelper.swift */,
+			);
+			path = ServiceAPI;
+			sourceTree = "<group>";
+		};
+		04912CFF23FEDABF0038E0F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04912D0223FEDD670038E0F2 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04912D0223FEDD670038E0F2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				04912D0523FEEB620038E0F2 /* ShowViewCell.swift */,
+				04912D0623FEEB620038E0F2 /* ShowViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		04912D0923FEF64D0038E0F2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				04912D0A23FEF6640038E0F2 /* Constants.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		08DF996AF29AAF6CA30442BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADE959543CE315D08EC1073C /* Pods-TakeAway.debug.xcconfig */,
+				F96ABFEA9F11B48D962A502C /* Pods-TakeAway.release.xcconfig */,
+				CD50F87242F1C0058E8A54AE /* Pods-TakeAwayTests.debug.xcconfig */,
+				CB9895F34F0939B84FB2F74D /* Pods-TakeAwayTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AF4A96A8C0B67C891FF6A806 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D524863F62EE3D2C5B0A2E4 /* Pods_TakeAway.framework */,
+				803FD80FE85199B2C053FA32 /* Pods_TakeAwayTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04912CEB23FED0600038E0F2 /* Build configuration list for PBXNativeTarget "TakeAway" */;
 			buildPhases = (
+				CA7D9BCEC189E350C5BD71FD /* [CP] Check Pods Manifest.lock */,
 				04912CC823FED05F0038E0F2 /* Sources */,
 				04912CC923FED05F0038E0F2 /* Frameworks */,
 				04912CCA23FED05F0038E0F2 /* Resources */,
+				A00027990E04A90BDAB0E358 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +249,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04912CEE23FED0600038E0F2 /* Build configuration list for PBXNativeTarget "TakeAwayTests" */;
 			buildPhases = (
+				E94F898713B9BEEDC1ABA54C /* [CP] Check Pods Manifest.lock */,
 				04912CDE23FED0600038E0F2 /* Sources */,
 				04912CDF23FED0600038E0F2 /* Frameworks */,
 				04912CE023FED0600038E0F2 /* Resources */,
@@ -181,8 +308,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				04912CDC23FED0600038E0F2 /* LaunchScreen.storyboard in Resources */,
+				04912CF223FED1340038E0F2 /* sample.json in Resources */,
 				04912CD923FED0600038E0F2 /* Assets.xcassets in Resources */,
 				04912CD723FED05F0038E0F2 /* Main.storyboard in Resources */,
+				04912D0823FEEB620038E0F2 /* ShowViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,14 +324,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A00027990E04A90BDAB0E358 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TakeAway/Pods-TakeAway-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TakeAway/Pods-TakeAway-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TakeAway/Pods-TakeAway-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA7D9BCEC189E350C5BD71FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TakeAway-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E94F898713B9BEEDC1ABA54C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TakeAwayTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04912CC823FED05F0038E0F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040CDA0F23FF00CB00DD51A2 /* DBHelper.swift in Sources */,
+				04912CFC23FED55A0038E0F2 /* ServiceAPI.swift in Sources */,
 				04912CD423FED05F0038E0F2 /* ViewController.swift in Sources */,
 				04912CD023FED05F0038E0F2 /* AppDelegate.swift in Sources */,
-				04912CD223FED05F0038E0F2 /* SceneDelegate.swift in Sources */,
+				040CDA1623FFF9EA00DD51A2 /* ModifyCellViewModel.swift in Sources */,
+				04912CF623FED2E50038E0F2 /* Payload.swift in Sources */,
+				04912CF923FED4B20038E0F2 /* RestaurantListViewModel.swift in Sources */,
+				04912D0B23FEF6640038E0F2 /* Constants.swift in Sources */,
+				04912D0723FEEB620038E0F2 /* ShowViewCell.swift in Sources */,
+				04912CFE23FED68A0038E0F2 /* RestaurantVM.swift in Sources */,
+				040CDA1323FF136600DD51A2 /* SortBy.swift in Sources */,
+				04912D0423FEE9640038E0F2 /* RestaurantVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040CDA1A2400510A00DD51A2 /* TestRestaurantList.swift in Sources */,
 				04912CE723FED0600038E0F2 /* TakeAwayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +563,7 @@
 		};
 		04912CEC23FED0600038E0F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADE959543CE315D08EC1073C /* Pods-TakeAway.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +582,7 @@
 		};
 		04912CED23FED0600038E0F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F96ABFEA9F11B48D962A502C /* Pods-TakeAway.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,6 +601,7 @@
 		};
 		04912CEF23FED0600038E0F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD50F87242F1C0058E8A54AE /* Pods-TakeAwayTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -418,6 +624,7 @@
 		};
 		04912CF023FED0600038E0F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB9895F34F0939B84FB2F74D /* Pods-TakeAwayTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

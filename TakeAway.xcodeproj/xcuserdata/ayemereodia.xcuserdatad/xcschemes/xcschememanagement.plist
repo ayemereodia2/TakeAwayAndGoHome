@@ -7,7 +7,20 @@
 		<key>TakeAway.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>04912CCB23FED05F0038E0F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>04912CE123FED0600038E0F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
