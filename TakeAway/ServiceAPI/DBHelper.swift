@@ -75,7 +75,11 @@ class DBHelper {
     {
         do {
             //randomize id
+          // for unique values...delete first
+            self.removeFromFav(favourite)
+            
             let insert = self.favourite.insert(id <- favourite.id, name <- favourite.name , status <- favourite.status)
+        
             try db!.run(insert)
                        print("added items to db")
             } catch let insertError{
@@ -85,7 +89,7 @@ class DBHelper {
     
     func removeFromFav(_ favourite:Favourite)
     {
-    let fav = self.favourite.filter(self.name == favourite.name)
+        let fav = self.favourite.filter(self.id == favourite.id)
                    let deleted = fav.delete()
                    do{
                        try self.db?.run(deleted)
