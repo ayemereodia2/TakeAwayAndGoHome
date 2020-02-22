@@ -25,7 +25,7 @@ protocol RestaurantVMDelegate {
     
     
     
-    @objc dynamic var listOfRestaurants: [Payload] = []
+     var listOfRestaurants: [Payload] = []
     
     var listOffavourites: [Favourite] = []
     
@@ -35,6 +35,23 @@ protocol RestaurantVMDelegate {
         
         self.dataSource?.data.value = ServiceAPI.shared.getListFromJSON()
         //restaurantDelegate?.didGetEntries(restaurants)
+        self.dataSource?.data.value.forEach({ (item) in
+            if self.listOffavourites.contains(where: {$0.name == item.name}){
+                listOfRestaurants.append(item)
+            }
+        })
+        var sorted = [Payload]()
+        
+        let temp = self.dataSource?.data.value
+        temp?.forEach({ (load) in
+            if !listOfRestaurants.contains(where: {$0.name == load.name}){
+                sorted.append(load)
+            }
+        })
+         listOfRestaurants.append(contentsOf: sorted)
+        self.dataSource?.data.value = listOfRestaurants
+        listOfRestaurants = []
+        print("YOOOOO",self.dataSource!.data.value.count)
     }
     
      func getFavourites(){
@@ -42,8 +59,16 @@ protocol RestaurantVMDelegate {
         //restaurantDelegate?.didGet(favourites)
     }
     
-
     
+    
+
+    func filterOnSearch(search:String){
+        
+       self.dataSource!.data.value = self.dataSource!.data.value.filter({( rest : Payload) -> Bool in
+            return rest.name.lowercased().contains(search.lowercased())
+            
+        })
+    }
 }
 
 

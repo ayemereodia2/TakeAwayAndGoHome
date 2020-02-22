@@ -17,7 +17,7 @@ class ShowViewCell: UITableViewCell {
     @IBOutlet weak var favouriteBtn: UIButton!
     @IBOutlet weak var nameLabl: UILabel!
     
-    var favouriteToggleState = 1
+    var favouriteToggleState = 2
     
     let filledImg = UIImage(named:"filled_star.png")
     let emptyImg = UIImage(named:"empty_star.png")
@@ -60,17 +60,17 @@ class ShowViewCell: UITableViewCell {
         }
 
     
-    @IBAction func selectFav(_ sender: Any) {
-        if favouriteToggleState == StarCheked.On.rawValue {
-                    favouriteToggleState = StarCheked.Off.rawValue
-            self.favouriteBtn.setImage(restViewModel.filledImg,for:.normal)
-            setFavourite(toggle: StarCheked.On.rawValue)
-        }
-        else {
-            favouriteToggleState = StarCheked.On.rawValue
+    @IBAction func selectFav(_ sender: UIButton) {
+        
+        if emptyImg == sender.currentImage{
+                  self.favouriteBtn.setImage(restViewModel.filledImg,for:.normal)
+                  setFavourite(toggle: 1)
+        }else{
+            //favouriteToggleState = 1
             self.favouriteBtn.setImage(restViewModel.emptyImg,for:.normal)
-            setFavourite(toggle: StarCheked.Off.rawValue)
-    }
+            setFavourite(toggle: 2)
+        }
+        
 }
     
 

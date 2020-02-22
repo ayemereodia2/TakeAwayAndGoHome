@@ -52,13 +52,10 @@ class RestaurantVC: UIViewController{
                 self?.tableView.reloadData()
             
             }
-            
-            self.viewM.getRestaurant()
             self.viewM.getFavourites()
-            
-            restaurants = (self.viewM.dataSource?.data.value)!
-            
 
+            self.viewM.getRestaurant()
+                        
     }
     
     // MARK: - For Testing Purposes
@@ -118,8 +115,7 @@ class RestaurantVC: UIViewController{
 extension RestaurantVC :RestaurantVMDelegate, UISearchBarDelegate{
 
     func sortBy(option: SortBy){
-        //viewM.getRestaurant()
-        //restaurants =
+        restaurants = viewM.dataSource!.data.value
         switch (option) {
         case .minCost:
             viewM.dataSource?.data.value = restaurants.sorted{$0.sortingValues.minCost > $1.sortingValues.minCost }
@@ -166,10 +162,7 @@ extension RestaurantVC :RestaurantVMDelegate, UISearchBarDelegate{
         else{
             //MARK :- refresh Favourites
             viewM.getFavourites()
-            viewM.dataSource?.data.value = restaurants.filter({( rest : Payload) -> Bool in
-                return rest.name.lowercased().contains(searchText.lowercased())
-                
-            })
+            viewM.filterOnSearch(search: searchText)
             tableView.reloadData()
         }
         

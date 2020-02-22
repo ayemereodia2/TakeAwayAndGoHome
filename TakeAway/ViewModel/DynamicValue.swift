@@ -34,9 +34,9 @@ public func addAndNotify(observer: NSObject, completionHandler: @escaping Comple
     self.notify()
 }
 
-private func notify() {
+    private func notify() {
     observers.forEach({ $0.value() })
-}
+   }
 }
 
 
