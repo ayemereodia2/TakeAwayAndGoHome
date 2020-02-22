@@ -18,16 +18,10 @@ class RestaurantVC: UIViewController{
     var headingMenu:UIAlertController!
 
     // MARK: - Properties
-           var viewModel:RestaurantVM!
-           public var restaurants = [Payload]()
-           private var tempList = [Payload]()
-           private var filtered = [Payload]()
-           private var favourites = [Favourite]()
-    
-    
+    var viewModel:RestaurantVM!
+    public var restaurants = [Payload]()
     public var options:[Payload] = []
     private var selection:(([String])->Void)? = nil
-           var search:Bool = false
     
     let dataSource = RestaurantDataSource()
 
@@ -167,7 +161,6 @@ extension RestaurantVC :RestaurantVMDelegate, UISearchBarDelegate{
         }
         
     }
-    
     
     static func create(with viewModel: RestaurantVM) -> UIViewController {
            let storyboard = UIStoryboard(name: "Main", bundle: nil)
