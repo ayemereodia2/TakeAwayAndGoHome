@@ -48,7 +48,7 @@ class RestaurantVC: UIViewController{
             }
             self.viewM.getFavourites()
 
-            self.viewM.getRestaurant()
+            self.viewM.sortRestaurantsByFavourites()
                         
     }
     
@@ -149,8 +149,7 @@ extension RestaurantVC :RestaurantVMDelegate, UISearchBarDelegate{
         
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty{
-            //viewM.dataSource?.data.value = viewM.listOfRestaurants
-            self.viewM.getRestaurant()
+            self.viewM.sortRestaurantsByFavourites()
             tableView.reloadData()
         }
         else{

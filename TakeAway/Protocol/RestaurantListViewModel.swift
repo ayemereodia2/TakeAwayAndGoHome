@@ -12,7 +12,7 @@ protocol RestaurantListViewModel {
     //var listOfRestaurants:[Payload] { get set }
     var listOffavourites:[Favourite] { get set }
     
-    func getRestaurant()
+    func sortRestaurantsByFavourites()
     func getFavourites()
     //func sortBy(option: SortBy,tableView: UITableView)
 }

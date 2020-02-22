@@ -31,7 +31,7 @@ protocol RestaurantVMDelegate {
     
     var restaurantDelegate:RestaurantVMDelegate?
     
-     func getRestaurant(){
+     func sortRestaurantsByFavourites(){
         
         self.dataSource?.data.value = ServiceAPI.shared.getListFromJSON()
         //restaurantDelegate?.didGetEntries(restaurants)
@@ -54,9 +54,10 @@ protocol RestaurantVMDelegate {
         print("YOOOOO",self.dataSource!.data.value.count)
     }
     
+    
+    
      func getFavourites(){
         self.listOffavourites = DBHelper.shared.getAllFavourite()
-        //restaurantDelegate?.didGet(favourites)
     }
     
     
