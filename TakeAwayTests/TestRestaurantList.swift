@@ -16,7 +16,9 @@ class TestRestaurantViewControllerTest:XCTestCase{
     //you need to start the view life cycle
     
     func test_viewDidLoad_Restaurants(){
-        let spyViewModel = RestaurantVM()
+        let dataSource = RestaurantDataSource()
+
+        let spyViewModel = RestaurantVM(dataSource: dataSource)
 
         let sut = makeSUT(options: spyViewModel)
         
@@ -28,7 +30,9 @@ class TestRestaurantViewControllerTest:XCTestCase{
     
     func test_SingleRowItem_Label(){
         
-       let spyViewModel = RestaurantVM()
+        let dataSource = RestaurantDataSource()
+
+        let spyViewModel = RestaurantVM(dataSource: dataSource)
 
         let sut = makeSUT(options: spyViewModel)
         

@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let _ = DBHelper.shared.self
         
-        let viewModel = RestaurantVM()
+        let dataSource = RestaurantDataSource()
+
+        let viewModel = RestaurantVM(dataSource: dataSource)
         
         let restauranListViewController = RestaurantVC.create(with: viewModel)
         window = UIWindow(frame: UIScreen.main.bounds)

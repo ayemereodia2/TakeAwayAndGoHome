@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 protocol RestaurantListViewModel {
-    var listOfRestaurants:[Payload] { get set }
+    //var listOfRestaurants:[Payload] { get set }
     var listOffavourites:[Favourite] { get set }
     
     func getRestaurant()

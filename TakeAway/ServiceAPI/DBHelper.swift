@@ -62,7 +62,7 @@ class DBHelper {
         
         do {
             for fav in try db!.prepare(self.favourite) {
-                products.append(Favourite(id: fav[id], name: fav[name], status:fav[status]))
+               products.append(Favourite(id: fav[id], name: fav[name], status:fav[status]))
             }
         } catch {
             print("Select failed")
@@ -74,6 +74,7 @@ class DBHelper {
     func addFavouritesToDb(_ favourite:Favourite)
     {
         do {
+            //randomize id
             let insert = self.favourite.insert(id <- favourite.id, name <- favourite.name , status <- favourite.status)
             try db!.run(insert)
                        print("added items to db")

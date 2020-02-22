@@ -30,14 +30,25 @@ class ShowViewCell: UITableViewCell {
         super.awakeFromNib()
         
       }
+   
     
     var restViewModel:ModifyCellViewModel!{
         didSet{
+            let ts = DBHelper.shared.getAllFavourite()
+
             nameLabl?.text = restViewModel.restaurantName
             openingState?.text = restViewModel.status
             self.payload = restViewModel.payload
-            self.favouriteBtn.setImage(restViewModel.imageType,for:.normal)
              restViewModel.setStatuLabelColor(label:self.openingState)
+            
+            if ts.contains(where: {$0.name == restViewModel.restaurantName}){
+                print("*Yes")
+                  self.favouriteBtn.setImage(filledImg,for:.normal)
+            }
+            else{
+                print("#No")
+                    self.favouriteBtn.setImage(emptyImg,for:.normal)
+            }
         }
     }
     
@@ -66,6 +77,7 @@ class ShowViewCell: UITableViewCell {
     func setFavourite(toggle:Int)
     {
         if let payload = self.payload{
+
             let fav = Favourite(id:self.rowCount+1, name: payload.name, status: payload.status)
             delegate?.didSelectFavourite(fav,toggle: toggle)
         }

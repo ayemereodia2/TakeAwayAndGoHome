@@ -12,13 +12,13 @@ import Foundation
 struct Restaurant:Codable {
     let restaurants:[Payload]
 }
-struct Payload:Codable {
+class Payload:NSObject,Codable {
        let name:String
        let status:String
        let sortingValues:SortingValues
 }
 
-struct Favourite {
+struct Favourite{
     var id:Int
     var name:String
     var status:String

@@ -21,11 +21,12 @@ struct ModifyCellViewModel {
     
     let filledImg = UIImage(named:"filled_star.png")
     let emptyImg = UIImage(named:"empty_star.png")
-    
+    private var favourite = [Favourite]()
     
     let payload:Payload?
     //MARK: - Dependency Injection
-    init(payload:Payload, favourite:[Favourite]) {
+    init(payload:Payload) {
+        self.favourite = DBHelper.shared.getAllFavourite()
         self.payload = payload
         self.restaurantName = payload.name
         self.status = payload.status

@@ -26,7 +26,6 @@ case open = 0
 case orderAhead
 case closed
     
-    
     var description: String? {
     get {
         switch self {
@@ -46,4 +45,9 @@ enum StarCheked:Int {
 case On = 1
 case Off
     
+}
+
+
+func randomInt(min: Int, max: Int) -> Int {
+    return min + Int(arc4random_uniform(UInt32(max - min + 1)))
 }

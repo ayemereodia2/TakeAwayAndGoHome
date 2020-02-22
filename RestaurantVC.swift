@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class RestaurantVC: UIViewController{
 
     // MARK: - UI
 
@@ -24,31 +24,48 @@ class RestaurantVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
            private var filtered = [Payload]()
            private var favourites = [Favourite]()
     
+    
     public var options:[Payload] = []
     private var selection:(([String])->Void)? = nil
            var search:Bool = false
+    
+    let dataSource = RestaurantDataSource()
+
+    lazy var viewM : RestaurantVM = {
+        let viewModel = RestaurantVM(dataSource:dataSource)
+        return viewModel
+    }()
+    
+    
+    
     // MARK: - Life Cycle
 
            override func viewDidLoad() {
                super.viewDidLoad()
-               tableView.dataSource = self
-               tableView.delegate = self
+               tableView.dataSource = self.dataSource
+               tableView.delegate = self.dataSource
                setUpCell()
                searchBar.delegate = self
-              viewModel.restaurantDelegate = self
-               setUpViewModel()
-           }
+               viewM.restaurantDelegate = self
+            
+            self.dataSource.data.addAndNotify(observer: self) { [weak self] in
+                self?.tableView.reloadData()
+            
+            }
+            
+            self.viewM.getRestaurant()
+            self.viewM.getFavourites()
+            
+            restaurants = (self.viewM.dataSource?.data.value)!
+            
+
+    }
     
+    // MARK: - For Testing Purposes
     convenience init(options:[Payload], selection: @escaping([String])->Void) {
         self.init()
         self.options = options
         self.selection = selection
-    }
-    
-    func setUpViewModel(){
-        restaurants = viewModel.listOfRestaurants
-        tempList = restaurants
-        favourites = viewModel.listOffavourites
     }
     
     func setUpCell(){
@@ -98,38 +115,38 @@ class RestaurantVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
 }
 
-extension RestaurantVC :favouriteDelegate,RestaurantVMDelegate, UISearchBarDelegate{
+extension RestaurantVC :RestaurantVMDelegate, UISearchBarDelegate{
 
     func sortBy(option: SortBy){
-        viewModel.getRestaurant()
-        restaurants = viewModel.listOfRestaurants
+        //viewM.getRestaurant()
+        //restaurants =
         switch (option) {
         case .minCost:
-            restaurants = restaurants.sorted{$0.sortingValues.minCost > $1.sortingValues.minCost }
+            viewM.dataSource?.data.value = restaurants.sorted{$0.sortingValues.minCost > $1.sortingValues.minCost }
             tableView.reloadData()
                 break;
         case .averageProductPrice:
-            restaurants = restaurants.sorted{$0.sortingValues.averageProductPrice > $1.sortingValues.averageProductPrice }
-                       tableView.reloadData()
+            viewM.dataSource?.data.value = restaurants.sorted{$0.sortingValues.averageProductPrice > $1.sortingValues.averageProductPrice }
+            tableView.reloadData()
             break;
         case .bestMatch:
-            restaurants = restaurants.sorted{$0.sortingValues.bestMatch > $1.sortingValues.bestMatch }
+            viewM.dataSource?.data.value = restaurants.sorted{$0.sortingValues.bestMatch > $1.sortingValues.bestMatch }
                 tableView.reloadData()
                 break;
         case .distance:
-            restaurants = restaurants.sorted{$0.sortingValues.distance > $1.sortingValues.distance }
+            viewM.dataSource?.data.value = restaurants.sorted{$0.sortingValues.distance > $1.sortingValues.distance }
                 tableView.reloadData()
             break;
         case .newest:
-                restaurants = restaurants.sorted{$0.sortingValues.newest > $1.sortingValues.newest }
+                viewM.dataSource?.data.value = restaurants.sorted{$0.sortingValues.newest > $1.sortingValues.newest }
                     tableView.reloadData()
                     break;
         case .popularity:
-            restaurants = restaurants.sorted{$0.sortingValues.popularity > $1.sortingValues.popularity }
+            viewM.dataSource?.data.value = restaurants.sorted{$0.sortingValues.popularity > $1.sortingValues.popularity }
             tableView.reloadData()
             break;
         case .deliveryCosts:
-                   restaurants = restaurants.sorted{$0.sortingValues.deliveryCosts > $1.sortingValues.deliveryCosts }
+                   viewM.dataSource?.data.value = restaurants.sorted{$0.sortingValues.deliveryCosts > $1.sortingValues.deliveryCosts }
                    tableView.reloadData()
                    break;
             
@@ -139,27 +156,17 @@ extension RestaurantVC :favouriteDelegate,RestaurantVMDelegate, UISearchBarDeleg
     }
     
     
-    
-    func didSelectFavourite(_ favourite: Favourite, toggle:Int) {
-        if toggle == 2{
-            DBHelper.shared.removeFromFav(favourite)
-        }else{
-            DBHelper.shared.addFavouritesToDb(favourite)
-        }
-    }
         
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty{
-            restaurants = viewModel.listOfRestaurants
+            //viewM.dataSource?.data.value = viewM.listOfRestaurants
+            self.viewM.getRestaurant()
             tableView.reloadData()
         }
         else{
             //MARK :- refresh Favourites
-            
-            viewModel.getFavourites()
-            favourites = viewModel.listOffavourites
-
-            restaurants = restaurants.filter({( rest : Payload) -> Bool in
+            viewM.getFavourites()
+            viewM.dataSource?.data.value = restaurants.filter({( rest : Payload) -> Bool in
                 return rest.name.lowercased().contains(searchText.lowercased())
                 
             })
@@ -168,38 +175,6 @@ extension RestaurantVC :favouriteDelegate,RestaurantVMDelegate, UISearchBarDeleg
         
     }
     
-    func searchBarIsEmpty() -> Bool {
-        return searchBar.text?.isEmpty ?? true
-    }
-           
-        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 98.0
-        }
-               
-               func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                
-                    if !searchBarIsEmpty(){
-                               return restaurants.count
-
-                           } else {
-                               return restaurants.count
-                           }
-                  }
-               
-           func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                   if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? ShowViewCell{
-                    cell.configureCell(self, rowCount: indexPath.row)
-                    
-                    cell.restViewModel = ModifyCellViewModel(payload: restaurants[indexPath.row], favourite: self.favourites)
-                    
-                    return cell
-
-                   }
-                   else{
-                       return UITableViewCell()
-                   }
-                   
-                }
     
     static func create(with viewModel: RestaurantVM) -> UIViewController {
            let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -26,6 +26,8 @@
 		04912D0723FEEB620038E0F2 /* ShowViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912D0523FEEB620038E0F2 /* ShowViewCell.swift */; };
 		04912D0823FEEB620038E0F2 /* ShowViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04912D0623FEEB620038E0F2 /* ShowViewCell.xib */; };
 		04912D0B23FEF6640038E0F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912D0A23FEF6640038E0F2 /* Constants.swift */; };
+		04FDA6D02400F15500F70EA5 /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FDA6CF2400F15500F70EA5 /* DynamicValue.swift */; };
+		04FDA6D22400F34C00F70EA5 /* RestaurantDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FDA6D12400F34C00F70EA5 /* RestaurantDataSource.swift */; };
 		A4D797340FFB7D84A9905DCE /* Pods_TakeAwayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803FD80FE85199B2C053FA32 /* Pods_TakeAwayTests.framework */; };
 		D1B86FC802C9456F9231B339 /* Pods_TakeAway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D524863F62EE3D2C5B0A2E4 /* Pods_TakeAway.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,8 @@
 		04912D0523FEEB620038E0F2 /* ShowViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewCell.swift; sourceTree = "<group>"; };
 		04912D0623FEEB620038E0F2 /* ShowViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowViewCell.xib; sourceTree = "<group>"; };
 		04912D0A23FEF6640038E0F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04FDA6CF2400F15500F70EA5 /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
+		04FDA6D12400F34C00F70EA5 /* RestaurantDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDataSource.swift; sourceTree = "<group>"; };
 		3D524863F62EE3D2C5B0A2E4 /* Pods_TakeAway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeAway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		803FD80FE85199B2C053FA32 /* Pods_TakeAwayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeAwayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE959543CE315D08EC1073C /* Pods-TakeAway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeAway.debug.xcconfig"; path = "Target Support Files/Pods-TakeAway/Pods-TakeAway.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 			children = (
 				04912CFD23FED68A0038E0F2 /* RestaurantVM.swift */,
 				040CDA1523FFF9EA00DD51A2 /* ModifyCellViewModel.swift */,
+				04FDA6CF2400F15500F70EA5 /* DynamicValue.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			children = (
 				04912CF523FED2E50038E0F2 /* Payload.swift */,
 				040CDA1223FF136600DD51A2 /* SortBy.swift */,
+				04FDA6D12400F34C00F70EA5 /* RestaurantDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,9 +400,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				040CDA0F23FF00CB00DD51A2 /* DBHelper.swift in Sources */,
+				04FDA6D22400F34C00F70EA5 /* RestaurantDataSource.swift in Sources */,
 				04912CFC23FED55A0038E0F2 /* ServiceAPI.swift in Sources */,
 				04912CD423FED05F0038E0F2 /* ViewController.swift in Sources */,
 				04912CD023FED05F0038E0F2 /* AppDelegate.swift in Sources */,
+				04FDA6D02400F15500F70EA5 /* DynamicValue.swift in Sources */,
 				040CDA1623FFF9EA00DD51A2 /* ModifyCellViewModel.swift in Sources */,
 				04912CF623FED2E50038E0F2 /* Payload.swift in Sources */,
 				04912CF923FED4B20038E0F2 /* RestaurantListViewModel.swift in Sources */,

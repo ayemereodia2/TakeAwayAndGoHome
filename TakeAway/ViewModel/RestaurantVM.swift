@@ -10,40 +10,41 @@ import Foundation
 import UIKit
 
 protocol RestaurantVMDelegate {
-    //func didGetEntries(_ restaurants:[Payload])
     func sortBy(option: SortBy)
-    //func didGet(_ favourites:[Favourite])
 }
 
-final class RestaurantVM:RestaurantListViewModel {
+ class RestaurantVM:NSObject,RestaurantListViewModel {
     
-    var listOfRestaurants: [Payload]
-    
-    var listOffavourites: [Favourite]
-    
-    
-    
-        
-    var restaurantDelegate:RestaurantVMDelegate?
-    
-     init() {
-        self.listOfRestaurants = [Payload]()
-        self.listOffavourites = [Favourite]()
-        getRestaurant()
-        getFavourites()
+   
+    weak var dataSource : GenericDataSource<Payload>?
+
+
+    init(dataSource : GenericDataSource<Payload>?) {
+           self.dataSource = dataSource
     }
+    
+    
+    
+    @objc dynamic var listOfRestaurants: [Payload] = []
+    
+    var listOffavourites: [Favourite] = []
+    
+    var restaurantDelegate:RestaurantVMDelegate?
     
      func getRestaurant(){
         
-        listOfRestaurants = ServiceAPI.shared.getListFromJSON()
+        self.dataSource?.data.value = ServiceAPI.shared.getListFromJSON()
         //restaurantDelegate?.didGetEntries(restaurants)
     }
     
      func getFavourites(){
-        listOffavourites = DBHelper.shared.getAllFavourite()
+        self.listOffavourites = DBHelper.shared.getAllFavourite()
         //restaurantDelegate?.didGet(favourites)
     }
     
 
     
 }
+
+
+
